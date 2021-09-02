@@ -97,6 +97,10 @@ class CachedProperty {
 };
 #endif
 
+static inline int HwTimeoutMultiplier() {
+  return android::base::GetIntProperty("ro.hw_timeout_multiplier", 1);
+}
+
 } // namespace base
 } // namespace android
 
