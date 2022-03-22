@@ -654,7 +654,9 @@ TEST(logging, SetLoggerReturnsOldFunction) {
   EXPECT_TRUE(old_function);
 }
 
-TEST(logging, ForkSafe) {
+// b/217436422): ForkSafe is disabled due to "qemu: uncaught target signal 6
+// (Aborted)" issue that happened occasionally.
+TEST(logging, DISABLED_ForkSafe) {
 #if !defined(_WIN32)
   using namespace android::base;
   SetLogger(
